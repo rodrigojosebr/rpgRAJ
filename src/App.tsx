@@ -1,25 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as S from './App.styles';
+import { Character } from './components/Character/character';
+import { UseCharacter } from './hooks/useCharacter';
 
-function App() {
+const App = () => {
+  const char = UseCharacter();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <S.Container>
+      <S.Map>
+        <Character x={5} y={0} />
+      </S.Map>
+    </S.Container>
   );
 }
 
