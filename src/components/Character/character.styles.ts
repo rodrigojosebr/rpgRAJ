@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.div<{ left: number, top: number, size: number }>`
+export const Container = styled.div<{ left: number, top: number, size: number, sidePos: number }>`
   width: ${props => props.size}px;
   height: ${props => props.size}px;
   position: absolute;
   left: ${props => props.left}px;
-  border-radius: 50%;
-  background-color: #ff0000;
+  top: ${props => props.top}px;
+  background-image: url('/assets/character.png');
+  background-position: 0px ${props => props.sidePos}px;
 
 `;
