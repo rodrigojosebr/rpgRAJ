@@ -1,10 +1,10 @@
+import { useEffect } from 'react';
 import * as S from './App.styles';
-import { useEffect, useState } from 'react';
 import { Character } from './components/Character/character';
 import { UseCharacter } from './hooks/useCharacter';
 
 const App = () => {
-  const char = UseCharacter();
+  const char = UseCharacter('RAJ_Teste');
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -37,7 +37,7 @@ const App = () => {
   return (
     <S.Container>
       <S.Map>
-        <Character x={char.x} y={char.y} side={char.side} />
+        <Character name={char.name} x={char.x} y={char.y} side={char.side} />
       </S.Map>
     </S.Container>
   );

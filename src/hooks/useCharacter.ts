@@ -1,9 +1,9 @@
-import { CharacterSides } from '../types/characterSides';
 import { useState } from 'react';
 import { mapSpots } from '../data/mapSpots';
+import { CharacterSides } from '../types/characterSides';
 
-
-export const UseCharacter = () => {
+export const UseCharacter = (propName: string) => {
+  const [name, setName] = useState(propName);
   const [pos, setPos] = useState({ x: 8, y: 13 });
   const [side, setSide] = useState<CharacterSides>('down');
 
@@ -43,11 +43,11 @@ export const UseCharacter = () => {
     return false;
   }
 
-
   return {
     x: pos.x,
     y: pos.y,
     side,
+    name,
     moveLeft,
     moveRight,
     moveDown,
